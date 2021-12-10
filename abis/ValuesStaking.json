@@ -1,9 +1,21 @@
 [
   {
     "inputs": [
-      { "internalType": "address", "name": "_CLAM", "type": "address" },
-      { "internalType": "address", "name": "_sCLAM", "type": "address" },
-      { "internalType": "uint256", "name": "_epochLength", "type": "uint256" },
+      {
+        "internalType": "address",
+        "name": "_VALUES",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_sVALUES",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_epochLength",
+        "type": "uint256"
+      },
       {
         "internalType": "uint256",
         "name": "_firstEpochNumber",
@@ -58,14 +70,24 @@
   },
   {
     "inputs": [],
-    "name": "CLAM",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "name": "VALUES",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_recipient", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "_recipient",
+        "type": "address"
+      }
     ],
     "name": "claim",
     "outputs": [],
@@ -75,14 +97,26 @@
   {
     "inputs": [],
     "name": "contractBalance",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "distributor",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -90,10 +124,26 @@
     "inputs": [],
     "name": "epoch",
     "outputs": [
-      { "internalType": "uint256", "name": "length", "type": "uint256" },
-      { "internalType": "uint256", "name": "number", "type": "uint256" },
-      { "internalType": "uint256", "name": "endTime", "type": "uint256" },
-      { "internalType": "uint256", "name": "distribute", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "length",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "number",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "endTime",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "distribute",
+        "type": "uint256"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
@@ -107,7 +157,11 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_amount", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      }
     ],
     "name": "giveLockBonus",
     "outputs": [],
@@ -117,21 +171,39 @@
   {
     "inputs": [],
     "name": "index",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "locker",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "owner",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -144,7 +216,11 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "newOwner_", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "newOwner_",
+        "type": "address"
+      }
     ],
     "name": "pushManagement",
     "outputs": [],
@@ -167,7 +243,11 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_amount", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      }
     ],
     "name": "returnLockBonus",
     "outputs": [],
@@ -176,19 +256,29 @@
   },
   {
     "inputs": [],
-    "name": "sCLAM",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "name": "sVALUES",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
       {
-        "internalType": "enum OtterStaking.CONTRACTS",
+        "internalType": "enum ValuesStaking.CONTRACTS",
         "name": "_contract",
         "type": "uint8"
       },
-      { "internalType": "address", "name": "_address", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      }
     ],
     "name": "setContract",
     "outputs": [],
@@ -197,7 +287,11 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_warmupPeriod", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "_warmupPeriod",
+        "type": "uint256"
+      }
     ],
     "name": "setWarmup",
     "outputs": [],
@@ -206,11 +300,25 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_amount", "type": "uint256" },
-      { "internalType": "address", "name": "_recipient", "type": "address" }
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_recipient",
+        "type": "address"
+      }
     ],
     "name": "stake",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -224,14 +332,28 @@
   {
     "inputs": [],
     "name": "totalBonus",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_amount", "type": "uint256" },
-      { "internalType": "bool", "name": "_trigger", "type": "bool" }
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "_trigger",
+        "type": "bool"
+      }
     ],
     "name": "unstake",
     "outputs": [],
@@ -241,18 +363,46 @@
   {
     "inputs": [],
     "name": "warmupContract",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "name": "warmupInfo",
     "outputs": [
-      { "internalType": "uint256", "name": "deposit", "type": "uint256" },
-      { "internalType": "uint256", "name": "gons", "type": "uint256" },
-      { "internalType": "uint256", "name": "expiry", "type": "uint256" },
-      { "internalType": "bool", "name": "lock", "type": "bool" }
+      {
+        "internalType": "uint256",
+        "name": "deposit",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "gons",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "expiry",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "lock",
+        "type": "bool"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
@@ -260,7 +410,13 @@
   {
     "inputs": [],
     "name": "warmupPeriod",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   }

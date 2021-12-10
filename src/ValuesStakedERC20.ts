@@ -5,7 +5,7 @@ import {
   LogStakingContractUpdated as LogStakingContractUpdatedEvent,
   LogSupply as LogSupplyEvent,
   Transfer as TransferEvent,
-} from '../generated/StakedOtterClamERC20V2/StakedOtterClamERC20V2'
+} from '../generated/ValuesStakedERC20/ValuesStakedERC20'
 import {
   Approval,
   LogRebase,

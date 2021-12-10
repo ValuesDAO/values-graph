@@ -10,19 +10,19 @@ import {
   BigInt
 } from "@graphprotocol/graph-ts";
 
-export class ClamCirculatingSupply extends ethereum.SmartContract {
-  static bind(address: Address): ClamCirculatingSupply {
-    return new ClamCirculatingSupply("ClamCirculatingSupply", address);
+export class ValuesCirculatingSupply extends ethereum.SmartContract {
+  static bind(address: Address): ValuesCirculatingSupply {
+    return new ValuesCirculatingSupply("ValuesCirculatingSupply", address);
   }
 
-  CLAM(): Address {
-    let result = super.call("CLAM", "CLAM():(address)", []);
+  VALUES(): Address {
+    let result = super.call("VALUES", "VALUES():(address)", []);
 
     return result[0].toAddress();
   }
 
-  try_CLAM(): ethereum.CallResult<Address> {
-    let result = super.tryCall("CLAM", "CLAM():(address)", []);
+  try_VALUES(): ethereum.CallResult<Address> {
+    let result = super.tryCall("VALUES", "VALUES():(address)", []);
     if (result.reverted) {
       return new ethereum.CallResult();
     }
@@ -30,20 +30,20 @@ export class ClamCirculatingSupply extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toAddress());
   }
 
-  CLAMCirculatingSupply(): BigInt {
+  VALUESCirculatingSupply(): BigInt {
     let result = super.call(
-      "CLAMCirculatingSupply",
-      "CLAMCirculatingSupply():(uint256)",
+      "VALUESCirculatingSupply",
+      "VALUESCirculatingSupply():(uint256)",
       []
     );
 
     return result[0].toBigInt();
   }
 
-  try_CLAMCirculatingSupply(): ethereum.CallResult<BigInt> {
+  try_VALUESCirculatingSupply(): ethereum.CallResult<BigInt> {
     let result = super.tryCall(
-      "CLAMCirculatingSupply",
-      "CLAMCirculatingSupply():(uint256)",
+      "VALUESCirculatingSupply",
+      "VALUESCirculatingSupply():(uint256)",
       []
     );
     if (result.reverted) {
@@ -53,20 +53,20 @@ export class ClamCirculatingSupply extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toBigInt());
   }
 
-  getNonCirculatingCLAM(): BigInt {
+  getNonCirculatingVALUES(): BigInt {
     let result = super.call(
-      "getNonCirculatingCLAM",
-      "getNonCirculatingCLAM():(uint256)",
+      "getNonCirculatingVALUES",
+      "getNonCirculatingVALUES():(uint256)",
       []
     );
 
     return result[0].toBigInt();
   }
 
-  try_getNonCirculatingCLAM(): ethereum.CallResult<BigInt> {
+  try_getNonCirculatingVALUES(): ethereum.CallResult<BigInt> {
     let result = super.tryCall(
-      "getNonCirculatingCLAM",
-      "getNonCirculatingCLAM():(uint256)",
+      "getNonCirculatingVALUES",
+      "getNonCirculatingVALUES():(uint256)",
       []
     );
     if (result.reverted) {
@@ -76,17 +76,17 @@ export class ClamCirculatingSupply extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toBigInt());
   }
 
-  initialize(_clam: Address): boolean {
+  initialize(_values: Address): boolean {
     let result = super.call("initialize", "initialize(address):(bool)", [
-      ethereum.Value.fromAddress(_clam)
+      ethereum.Value.fromAddress(_values)
     ]);
 
     return result[0].toBoolean();
   }
 
-  try_initialize(_clam: Address): ethereum.CallResult<boolean> {
+  try_initialize(_values: Address): ethereum.CallResult<boolean> {
     let result = super.tryCall("initialize", "initialize(address):(bool)", [
-      ethereum.Value.fromAddress(_clam)
+      ethereum.Value.fromAddress(_values)
     ]);
     if (result.reverted) {
       return new ethereum.CallResult();
@@ -110,22 +110,22 @@ export class ClamCirculatingSupply extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toBoolean());
   }
 
-  nonCirculatingCLAMAddresses(param0: BigInt): Address {
+  nonCirculatingVALUESAddresses(param0: BigInt): Address {
     let result = super.call(
-      "nonCirculatingCLAMAddresses",
-      "nonCirculatingCLAMAddresses(uint256):(address)",
+      "nonCirculatingVALUESAddresses",
+      "nonCirculatingVALUESAddresses(uint256):(address)",
       [ethereum.Value.fromUnsignedBigInt(param0)]
     );
 
     return result[0].toAddress();
   }
 
-  try_nonCirculatingCLAMAddresses(
+  try_nonCirculatingVALUESAddresses(
     param0: BigInt
   ): ethereum.CallResult<Address> {
     let result = super.tryCall(
-      "nonCirculatingCLAMAddresses",
-      "nonCirculatingCLAMAddresses(uint256):(address)",
+      "nonCirculatingVALUESAddresses",
+      "nonCirculatingVALUESAddresses(uint256):(address)",
       [ethereum.Value.fromUnsignedBigInt(param0)]
     );
     if (result.reverted) {
@@ -150,24 +150,24 @@ export class ClamCirculatingSupply extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toAddress());
   }
 
-  setNonCirculatingCLAMAddresses(
+  setNonCirculatingVALUESAddresses(
     _nonCirculatingAddresses: Array<Address>
   ): boolean {
     let result = super.call(
-      "setNonCirculatingCLAMAddresses",
-      "setNonCirculatingCLAMAddresses(address[]):(bool)",
+      "setNonCirculatingVALUESAddresses",
+      "setNonCirculatingVALUESAddresses(address[]):(bool)",
       [ethereum.Value.fromAddressArray(_nonCirculatingAddresses)]
     );
 
     return result[0].toBoolean();
   }
 
-  try_setNonCirculatingCLAMAddresses(
+  try_setNonCirculatingVALUESAddresses(
     _nonCirculatingAddresses: Array<Address>
   ): ethereum.CallResult<boolean> {
     let result = super.tryCall(
-      "setNonCirculatingCLAMAddresses",
-      "setNonCirculatingCLAMAddresses(address[]):(bool)",
+      "setNonCirculatingVALUESAddresses",
+      "setNonCirculatingVALUESAddresses(address[]):(bool)",
       [ethereum.Value.fromAddressArray(_nonCirculatingAddresses)]
     );
     if (result.reverted) {
@@ -248,7 +248,7 @@ export class InitializeCall__Inputs {
     this._call = call;
   }
 
-  get _clam(): Address {
+  get _values(): Address {
     return this._call.inputValues[0].value.toAddress();
   }
 }
@@ -265,20 +265,20 @@ export class InitializeCall__Outputs {
   }
 }
 
-export class SetNonCirculatingCLAMAddressesCall extends ethereum.Call {
-  get inputs(): SetNonCirculatingCLAMAddressesCall__Inputs {
-    return new SetNonCirculatingCLAMAddressesCall__Inputs(this);
+export class SetNonCirculatingVALUESAddressesCall extends ethereum.Call {
+  get inputs(): SetNonCirculatingVALUESAddressesCall__Inputs {
+    return new SetNonCirculatingVALUESAddressesCall__Inputs(this);
   }
 
-  get outputs(): SetNonCirculatingCLAMAddressesCall__Outputs {
-    return new SetNonCirculatingCLAMAddressesCall__Outputs(this);
+  get outputs(): SetNonCirculatingVALUESAddressesCall__Outputs {
+    return new SetNonCirculatingVALUESAddressesCall__Outputs(this);
   }
 }
 
-export class SetNonCirculatingCLAMAddressesCall__Inputs {
-  _call: SetNonCirculatingCLAMAddressesCall;
+export class SetNonCirculatingVALUESAddressesCall__Inputs {
+  _call: SetNonCirculatingVALUESAddressesCall;
 
-  constructor(call: SetNonCirculatingCLAMAddressesCall) {
+  constructor(call: SetNonCirculatingVALUESAddressesCall) {
     this._call = call;
   }
 
@@ -287,10 +287,10 @@ export class SetNonCirculatingCLAMAddressesCall__Inputs {
   }
 }
 
-export class SetNonCirculatingCLAMAddressesCall__Outputs {
-  _call: SetNonCirculatingCLAMAddressesCall;
+export class SetNonCirculatingVALUESAddressesCall__Outputs {
+  _call: SetNonCirculatingVALUESAddressesCall;
 
-  constructor(call: SetNonCirculatingCLAMAddressesCall) {
+  constructor(call: SetNonCirculatingVALUESAddressesCall) {
     this._call = call;
   }
 

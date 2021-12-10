@@ -298,24 +298,9 @@ export class Withdrawal__Params {
   }
 }
 
-export class OtterTreasury extends ethereum.SmartContract {
-  static bind(address: Address): OtterTreasury {
-    return new OtterTreasury("OtterTreasury", address);
-  }
-
-  CLAM(): Address {
-    let result = super.call("CLAM", "CLAM():(address)", []);
-
-    return result[0].toAddress();
-  }
-
-  try_CLAM(): ethereum.CallResult<Address> {
-    let result = super.tryCall("CLAM", "CLAM():(address)", []);
-    if (result.reverted) {
-      return new ethereum.CallResult();
-    }
-    let value = result.value;
-    return ethereum.CallResult.fromValue(value[0].toAddress());
+export class ValuesTreasury extends ethereum.SmartContract {
+  static bind(address: Address): ValuesTreasury {
+    return new ValuesTreasury("ValuesTreasury", address);
   }
 
   LiquidityDepositorQueue(param0: Address): BigInt {
@@ -408,6 +393,21 @@ export class OtterTreasury extends ethereum.SmartContract {
     }
     let value = result.value;
     return ethereum.CallResult.fromValue(value[0].toBigInt());
+  }
+
+  VALUES(): Address {
+    let result = super.call("VALUES", "VALUES():(address)", []);
+
+    return result[0].toAddress();
+  }
+
+  try_VALUES(): ethereum.CallResult<Address> {
+    let result = super.tryCall("VALUES", "VALUES():(address)", []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value = result.value;
+    return ethereum.CallResult.fromValue(value[0].toAddress());
   }
 
   blocksNeededForQueue(): BigInt {
@@ -1088,14 +1088,14 @@ export class OtterTreasury extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toAddress());
   }
 
-  sCLAM(): Address {
-    let result = super.call("sCLAM", "sCLAM():(address)", []);
+  sVALUES(): Address {
+    let result = super.call("sVALUES", "sVALUES():(address)", []);
 
     return result[0].toAddress();
   }
 
-  try_sCLAM(): ethereum.CallResult<Address> {
-    let result = super.tryCall("sCLAM", "sCLAM():(address)", []);
+  try_sVALUES(): ethereum.CallResult<Address> {
+    let result = super.tryCall("sVALUES", "sVALUES():(address)", []);
     if (result.reverted) {
       return new ethereum.CallResult();
     }
@@ -1103,14 +1103,14 @@ export class OtterTreasury extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toAddress());
   }
 
-  sCLAMQueue(): BigInt {
-    let result = super.call("sCLAMQueue", "sCLAMQueue():(uint256)", []);
+  sVALUESQueue(): BigInt {
+    let result = super.call("sVALUESQueue", "sVALUESQueue():(uint256)", []);
 
     return result[0].toBigInt();
   }
 
-  try_sCLAMQueue(): ethereum.CallResult<BigInt> {
-    let result = super.tryCall("sCLAMQueue", "sCLAMQueue():(uint256)", []);
+  try_sVALUESQueue(): ethereum.CallResult<BigInt> {
+    let result = super.tryCall("sVALUESQueue", "sVALUESQueue():(uint256)", []);
     if (result.reverted) {
       return new ethereum.CallResult();
     }
@@ -1233,7 +1233,7 @@ export class ConstructorCall__Inputs {
     this._call = call;
   }
 
-  get _CLAM(): Address {
+  get _VALUES(): Address {
     return this._call.inputValues[0].value.toAddress();
   }
 
@@ -1241,7 +1241,7 @@ export class ConstructorCall__Inputs {
     return this._call.inputValues[1].value.toAddress();
   }
 
-  get _CLAMDAI(): Address {
+  get _VALUESDAI(): Address {
     return this._call.inputValues[2].value.toAddress();
   }
 
@@ -1552,36 +1552,6 @@ export class RenounceManagementCall__Outputs {
   }
 }
 
-export class RepayDebtWithCLAMCall extends ethereum.Call {
-  get inputs(): RepayDebtWithCLAMCall__Inputs {
-    return new RepayDebtWithCLAMCall__Inputs(this);
-  }
-
-  get outputs(): RepayDebtWithCLAMCall__Outputs {
-    return new RepayDebtWithCLAMCall__Outputs(this);
-  }
-}
-
-export class RepayDebtWithCLAMCall__Inputs {
-  _call: RepayDebtWithCLAMCall;
-
-  constructor(call: RepayDebtWithCLAMCall) {
-    this._call = call;
-  }
-
-  get _amount(): BigInt {
-    return this._call.inputValues[0].value.toBigInt();
-  }
-}
-
-export class RepayDebtWithCLAMCall__Outputs {
-  _call: RepayDebtWithCLAMCall;
-
-  constructor(call: RepayDebtWithCLAMCall) {
-    this._call = call;
-  }
-}
-
 export class RepayDebtWithReserveCall extends ethereum.Call {
   get inputs(): RepayDebtWithReserveCall__Inputs {
     return new RepayDebtWithReserveCall__Inputs(this);
@@ -1612,6 +1582,36 @@ export class RepayDebtWithReserveCall__Outputs {
   _call: RepayDebtWithReserveCall;
 
   constructor(call: RepayDebtWithReserveCall) {
+    this._call = call;
+  }
+}
+
+export class RepayDebtWithVALUESCall extends ethereum.Call {
+  get inputs(): RepayDebtWithVALUESCall__Inputs {
+    return new RepayDebtWithVALUESCall__Inputs(this);
+  }
+
+  get outputs(): RepayDebtWithVALUESCall__Outputs {
+    return new RepayDebtWithVALUESCall__Outputs(this);
+  }
+}
+
+export class RepayDebtWithVALUESCall__Inputs {
+  _call: RepayDebtWithVALUESCall;
+
+  constructor(call: RepayDebtWithVALUESCall) {
+    this._call = call;
+  }
+
+  get _amount(): BigInt {
+    return this._call.inputValues[0].value.toBigInt();
+  }
+}
+
+export class RepayDebtWithVALUESCall__Outputs {
+  _call: RepayDebtWithVALUESCall;
+
+  constructor(call: RepayDebtWithVALUESCall) {
     this._call = call;
   }
 }

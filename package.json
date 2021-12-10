@@ -1,14 +1,14 @@
 {
-  "name": "otterclam-subgraph",
+  "name": "values-subgraph",
   "version": "0.1.0",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
     "auth": "graph auth --product hosted-service",
-    "deploy": "graph deploy --product hosted-service otterclam/otterclam",
-    "create-local": "graph create --node http://localhost:8020/ otterclam/otterclam",
-    "remove-local": "graph remove --node http://localhost:8020/ otterclam/otterclam",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 otterclam/otterclam"
+    "deploy": "graph deploy --product hosted-service values/values",
+    "create-local": "graph create --node http://localhost:8020/ values/values",
+    "remove-local": "graph remove --node http://localhost:8020/ values/values",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 values/values"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.23.1",

@@ -9,7 +9,7 @@ import {
   ReservesUpdated as ReservesUpdatedEvent,
   RewardsMinted as RewardsMintedEvent,
   Withdrawal as WithdrawalEvent,
-} from '../generated/OtterTreasury/OtterTreasury'
+} from '../generated/ValuesTreasury/ValuesTreasury'
 import {
   ChangeActivated,
   ChangeQueued,

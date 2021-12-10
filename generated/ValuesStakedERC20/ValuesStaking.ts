@@ -54,7 +54,7 @@ export class OwnershipPushed__Params {
   }
 }
 
-export class OtterStaking__epochResult {
+export class ValuesStaking__epochResult {
   value0: BigInt;
   value1: BigInt;
   value2: BigInt;
@@ -77,7 +77,7 @@ export class OtterStaking__epochResult {
   }
 }
 
-export class OtterStaking__warmupInfoResult {
+export class ValuesStaking__warmupInfoResult {
   value0: BigInt;
   value1: BigInt;
   value2: BigInt;
@@ -100,19 +100,19 @@ export class OtterStaking__warmupInfoResult {
   }
 }
 
-export class OtterStaking extends ethereum.SmartContract {
-  static bind(address: Address): OtterStaking {
-    return new OtterStaking("OtterStaking", address);
+export class ValuesStaking extends ethereum.SmartContract {
+  static bind(address: Address): ValuesStaking {
+    return new ValuesStaking("ValuesStaking", address);
   }
 
-  CLAM(): Address {
-    let result = super.call("CLAM", "CLAM():(address)", []);
+  VALUES(): Address {
+    let result = super.call("VALUES", "VALUES():(address)", []);
 
     return result[0].toAddress();
   }
 
-  try_CLAM(): ethereum.CallResult<Address> {
-    let result = super.tryCall("CLAM", "CLAM():(address)", []);
+  try_VALUES(): ethereum.CallResult<Address> {
+    let result = super.tryCall("VALUES", "VALUES():(address)", []);
     if (result.reverted) {
       return new ethereum.CallResult();
     }
@@ -158,14 +158,14 @@ export class OtterStaking extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toAddress());
   }
 
-  epoch(): OtterStaking__epochResult {
+  epoch(): ValuesStaking__epochResult {
     let result = super.call(
       "epoch",
       "epoch():(uint256,uint256,uint256,uint256)",
       []
     );
 
-    return new OtterStaking__epochResult(
+    return new ValuesStaking__epochResult(
       result[0].toBigInt(),
       result[1].toBigInt(),
       result[2].toBigInt(),
@@ -173,7 +173,7 @@ export class OtterStaking extends ethereum.SmartContract {
     );
   }
 
-  try_epoch(): ethereum.CallResult<OtterStaking__epochResult> {
+  try_epoch(): ethereum.CallResult<ValuesStaking__epochResult> {
     let result = super.tryCall(
       "epoch",
       "epoch():(uint256,uint256,uint256,uint256)",
@@ -184,7 +184,7 @@ export class OtterStaking extends ethereum.SmartContract {
     }
     let value = result.value;
     return ethereum.CallResult.fromValue(
-      new OtterStaking__epochResult(
+      new ValuesStaking__epochResult(
         value[0].toBigInt(),
         value[1].toBigInt(),
         value[2].toBigInt(),
@@ -238,14 +238,14 @@ export class OtterStaking extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toAddress());
   }
 
-  sCLAM(): Address {
-    let result = super.call("sCLAM", "sCLAM():(address)", []);
+  sVALUES(): Address {
+    let result = super.call("sVALUES", "sVALUES():(address)", []);
 
     return result[0].toAddress();
   }
 
-  try_sCLAM(): ethereum.CallResult<Address> {
-    let result = super.tryCall("sCLAM", "sCLAM():(address)", []);
+  try_sVALUES(): ethereum.CallResult<Address> {
+    let result = super.tryCall("sVALUES", "sVALUES():(address)", []);
     if (result.reverted) {
       return new ethereum.CallResult();
     }
@@ -311,14 +311,14 @@ export class OtterStaking extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toAddress());
   }
 
-  warmupInfo(param0: Address): OtterStaking__warmupInfoResult {
+  warmupInfo(param0: Address): ValuesStaking__warmupInfoResult {
     let result = super.call(
       "warmupInfo",
       "warmupInfo(address):(uint256,uint256,uint256,bool)",
       [ethereum.Value.fromAddress(param0)]
     );
 
-    return new OtterStaking__warmupInfoResult(
+    return new ValuesStaking__warmupInfoResult(
       result[0].toBigInt(),
       result[1].toBigInt(),
       result[2].toBigInt(),
@@ -328,7 +328,7 @@ export class OtterStaking extends ethereum.SmartContract {
 
   try_warmupInfo(
     param0: Address
-  ): ethereum.CallResult<OtterStaking__warmupInfoResult> {
+  ): ethereum.CallResult<ValuesStaking__warmupInfoResult> {
     let result = super.tryCall(
       "warmupInfo",
       "warmupInfo(address):(uint256,uint256,uint256,bool)",
@@ -339,7 +339,7 @@ export class OtterStaking extends ethereum.SmartContract {
     }
     let value = result.value;
     return ethereum.CallResult.fromValue(
-      new OtterStaking__warmupInfoResult(
+      new ValuesStaking__warmupInfoResult(
         value[0].toBigInt(),
         value[1].toBigInt(),
         value[2].toBigInt(),
@@ -381,11 +381,11 @@ export class ConstructorCall__Inputs {
     this._call = call;
   }
 
-  get _CLAM(): Address {
+  get _VALUES(): Address {
     return this._call.inputValues[0].value.toAddress();
   }
 
-  get _sCLAM(): Address {
+  get _sVALUES(): Address {
     return this._call.inputValues[1].value.toAddress();
   }
 

@@ -3,12 +3,12 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: StakedOtterClamERC20V2
+    name: ValuesStakedERC20
     network: matic
     source:
-      address: '0xAAc144Dc08cE39Ed92182dd85ded60E5000C9e67'
-      abi: StakedOtterClamERC20V2
-      startBlock: 21593526
+      address: '0xBFcaDb1dc868599D0A6aA672A7b57578AEB0C2eE'
+      abi: ValuesStakedERC20
+      startBlock: 22360170
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -22,17 +22,17 @@ dataSources:
         - LogSupply
         - Transfer
       abis:
-        - name: StakedOtterClamERC20V2
-          file: ./abis/StakedOtterClamERC20V2.json
+        - name: ValuesStakedERC20
+          file: ./abis/ValuesStakedERC20.json
         # -- ProtocolMetric --
-        - name: OtterClamERC20V2
-          file: ./abis/OtterClamERC20V2.json
-        - name: OtterBondStakeDepository
-          file: ./abis/OtterBondStakeDepository.json
-        - name: OtterStaking
-          file: ./abis/OtterStaking.json
-        - name: ClamCirculatingSupply
-          file: ./abis/ClamCirculatingSupply.json
+        - name: ValuesERC20
+          file: ./abis/ValuesERC20.json
+        - name: ValuesBondStakeDepository
+          file: ./abis/ValuesBondStakeDepository.json
+        - name: ValuesStaking
+          file: ./abis/ValuesStaking.json
+        - name: ValuesCirculatingSupply
+          file: ./abis/ValuesCirculatingSupply.json
         - name: ERC20
           file: ./abis/ERC20.json
         - name: UniswapV2Pair
@@ -51,15 +51,15 @@ dataSources:
           handler: handleLogSupply
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/StakedOtterClamERC20V2.ts
+      file: ./src/ValuesStakedERC20.ts
 
   - kind: ethereum/contract
-    name: OtterTreasury
+    name: ValuesTreasury
     network: matic
     source:
-      address: '0x8ce47D56EAa1299d3e06FF3E04637449fFb01C9C'
-      abi: OtterTreasury
-      startBlock: 21593526
+      address: '0x66e432944AC12DBeb46A4159F9E30f77B67367F8'
+      abi: ValuesTreasury
+      startBlock: 22360166
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -78,19 +78,19 @@ dataSources:
         - RewardsMinted
         - Withdrawal
       abis:
-        - name: OtterTreasury
-          file: ./abis/OtterTreasury.json
+        - name: ValuesTreasury
+          file: ./abis/ValuesTreasury.json
         # -- ProtocolMetric --
-        - name: StakedOtterClamERC20V2
-          file: ./abis/StakedOtterClamERC20V2.json
-        - name: OtterClamERC20V2
-          file: ./abis/OtterClamERC20V2.json
-        - name: OtterBondStakeDepository
-          file: ./abis/OtterBondStakeDepository.json
-        - name: OtterStaking
-          file: ./abis/OtterStaking.json
-        - name: ClamCirculatingSupply
-          file: ./abis/ClamCirculatingSupply.json
+        - name: ValuesStakedERC20
+          file: ./abis/ValuesStakedERC20.json
+        - name: ValuesERC20
+          file: ./abis/ValuesERC20.json
+        - name: ValuesBondStakeDepository
+          file: ./abis/ValuesBondStakeDepository.json
+        - name: ValuesStaking
+          file: ./abis/ValuesStaking.json
+        - name: ValuesCirculatingSupply
+          file: ./abis/ValuesCirculatingSupply.json
         - name: ERC20
           file: ./abis/ERC20.json
         - name: UniswapV2Pair
@@ -119,4 +119,4 @@ dataSources:
           handler: handleRewardsMinted
         - event: Withdrawal(indexed address,uint256,uint256)
           handler: handleWithdrawal
-      file: ./src/OtterTreasury.ts
+      file: ./src/ValuesTreasury.ts

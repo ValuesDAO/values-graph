@@ -106,9 +106,9 @@ export class Transfer__Params {
   }
 }
 
-export class OtterClamERC20V2 extends ethereum.SmartContract {
-  static bind(address: Address): OtterClamERC20V2 {
-    return new OtterClamERC20V2("OtterClamERC20V2", address);
+export class ValuesERC20 extends ethereum.SmartContract {
+  static bind(address: Address): ValuesERC20 {
+    return new ValuesERC20("ValuesERC20", address);
   }
 
   DOMAIN_SEPARATOR(): Bytes {
@@ -630,32 +630,6 @@ export class BurnFromCall__Outputs {
   _call: BurnFromCall;
 
   constructor(call: BurnFromCall) {
-    this._call = call;
-  }
-}
-
-export class CompleteMigrationCall extends ethereum.Call {
-  get inputs(): CompleteMigrationCall__Inputs {
-    return new CompleteMigrationCall__Inputs(this);
-  }
-
-  get outputs(): CompleteMigrationCall__Outputs {
-    return new CompleteMigrationCall__Outputs(this);
-  }
-}
-
-export class CompleteMigrationCall__Inputs {
-  _call: CompleteMigrationCall;
-
-  constructor(call: CompleteMigrationCall) {
-    this._call = call;
-  }
-}
-
-export class CompleteMigrationCall__Outputs {
-  _call: CompleteMigrationCall;
-
-  constructor(call: CompleteMigrationCall) {
     this._call = call;
   }
 }

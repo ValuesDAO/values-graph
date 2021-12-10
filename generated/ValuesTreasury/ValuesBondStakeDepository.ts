@@ -166,7 +166,7 @@ export class OwnershipPushed__Params {
   }
 }
 
-export class OtterBondStakeDepository__adjustmentResult {
+export class ValuesBondStakeDepository__adjustmentResult {
   value0: boolean;
   value1: BigInt;
   value2: BigInt;
@@ -198,7 +198,7 @@ export class OtterBondStakeDepository__adjustmentResult {
   }
 }
 
-export class OtterBondStakeDepository__bondInfoResult {
+export class ValuesBondStakeDepository__bondInfoResult {
   value0: BigInt;
   value1: BigInt;
   value2: BigInt;
@@ -230,7 +230,7 @@ export class OtterBondStakeDepository__bondInfoResult {
   }
 }
 
-export class OtterBondStakeDepository__termsResult {
+export class ValuesBondStakeDepository__termsResult {
   value0: BigInt;
   value1: BigInt;
   value2: BigInt;
@@ -266,24 +266,9 @@ export class OtterBondStakeDepository__termsResult {
   }
 }
 
-export class OtterBondStakeDepository extends ethereum.SmartContract {
-  static bind(address: Address): OtterBondStakeDepository {
-    return new OtterBondStakeDepository("OtterBondStakeDepository", address);
-  }
-
-  CLAM(): Address {
-    let result = super.call("CLAM", "CLAM():(address)", []);
-
-    return result[0].toAddress();
-  }
-
-  try_CLAM(): ethereum.CallResult<Address> {
-    let result = super.tryCall("CLAM", "CLAM():(address)", []);
-    if (result.reverted) {
-      return new ethereum.CallResult();
-    }
-    let value = result.value;
-    return ethereum.CallResult.fromValue(value[0].toAddress());
+export class ValuesBondStakeDepository extends ethereum.SmartContract {
+  static bind(address: Address): ValuesBondStakeDepository {
+    return new ValuesBondStakeDepository("ValuesBondStakeDepository", address);
   }
 
   DAO(): Address {
@@ -301,14 +286,29 @@ export class OtterBondStakeDepository extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toAddress());
   }
 
-  adjustment(): OtterBondStakeDepository__adjustmentResult {
+  VALUES(): Address {
+    let result = super.call("VALUES", "VALUES():(address)", []);
+
+    return result[0].toAddress();
+  }
+
+  try_VALUES(): ethereum.CallResult<Address> {
+    let result = super.tryCall("VALUES", "VALUES():(address)", []);
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value = result.value;
+    return ethereum.CallResult.fromValue(value[0].toAddress());
+  }
+
+  adjustment(): ValuesBondStakeDepository__adjustmentResult {
     let result = super.call(
       "adjustment",
       "adjustment():(bool,uint256,uint256,uint256,uint256)",
       []
     );
 
-    return new OtterBondStakeDepository__adjustmentResult(
+    return new ValuesBondStakeDepository__adjustmentResult(
       result[0].toBoolean(),
       result[1].toBigInt(),
       result[2].toBigInt(),
@@ -318,7 +318,7 @@ export class OtterBondStakeDepository extends ethereum.SmartContract {
   }
 
   try_adjustment(): ethereum.CallResult<
-    OtterBondStakeDepository__adjustmentResult
+    ValuesBondStakeDepository__adjustmentResult
   > {
     let result = super.tryCall(
       "adjustment",
@@ -330,7 +330,7 @@ export class OtterBondStakeDepository extends ethereum.SmartContract {
     }
     let value = result.value;
     return ethereum.CallResult.fromValue(
-      new OtterBondStakeDepository__adjustmentResult(
+      new ValuesBondStakeDepository__adjustmentResult(
         value[0].toBoolean(),
         value[1].toBigInt(),
         value[2].toBigInt(),
@@ -359,14 +359,14 @@ export class OtterBondStakeDepository extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toAddress());
   }
 
-  bondInfo(param0: Address): OtterBondStakeDepository__bondInfoResult {
+  bondInfo(param0: Address): ValuesBondStakeDepository__bondInfoResult {
     let result = super.call(
       "bondInfo",
       "bondInfo(address):(uint256,uint256,uint256,uint256,uint256)",
       [ethereum.Value.fromAddress(param0)]
     );
 
-    return new OtterBondStakeDepository__bondInfoResult(
+    return new ValuesBondStakeDepository__bondInfoResult(
       result[0].toBigInt(),
       result[1].toBigInt(),
       result[2].toBigInt(),
@@ -377,7 +377,7 @@ export class OtterBondStakeDepository extends ethereum.SmartContract {
 
   try_bondInfo(
     param0: Address
-  ): ethereum.CallResult<OtterBondStakeDepository__bondInfoResult> {
+  ): ethereum.CallResult<ValuesBondStakeDepository__bondInfoResult> {
     let result = super.tryCall(
       "bondInfo",
       "bondInfo(address):(uint256,uint256,uint256,uint256,uint256)",
@@ -388,7 +388,7 @@ export class OtterBondStakeDepository extends ethereum.SmartContract {
     }
     let value = result.value;
     return ethereum.CallResult.fromValue(
-      new OtterBondStakeDepository__bondInfoResult(
+      new ValuesBondStakeDepository__bondInfoResult(
         value[0].toBigInt(),
         value[1].toBigInt(),
         value[2].toBigInt(),
@@ -703,14 +703,14 @@ export class OtterBondStakeDepository extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toBigInt());
   }
 
-  sCLAM(): Address {
-    let result = super.call("sCLAM", "sCLAM():(address)", []);
+  sVALUES(): Address {
+    let result = super.call("sVALUES", "sVALUES():(address)", []);
 
     return result[0].toAddress();
   }
 
-  try_sCLAM(): ethereum.CallResult<Address> {
-    let result = super.tryCall("sCLAM", "sCLAM():(address)", []);
+  try_sVALUES(): ethereum.CallResult<Address> {
+    let result = super.tryCall("sVALUES", "sVALUES():(address)", []);
     if (result.reverted) {
       return new ethereum.CallResult();
     }
@@ -756,14 +756,14 @@ export class OtterBondStakeDepository extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toBigInt());
   }
 
-  terms(): OtterBondStakeDepository__termsResult {
+  terms(): ValuesBondStakeDepository__termsResult {
     let result = super.call(
       "terms",
       "terms():(uint256,uint256,uint256,uint256,uint256,uint256)",
       []
     );
 
-    return new OtterBondStakeDepository__termsResult(
+    return new ValuesBondStakeDepository__termsResult(
       result[0].toBigInt(),
       result[1].toBigInt(),
       result[2].toBigInt(),
@@ -773,7 +773,7 @@ export class OtterBondStakeDepository extends ethereum.SmartContract {
     );
   }
 
-  try_terms(): ethereum.CallResult<OtterBondStakeDepository__termsResult> {
+  try_terms(): ethereum.CallResult<ValuesBondStakeDepository__termsResult> {
     let result = super.tryCall(
       "terms",
       "terms():(uint256,uint256,uint256,uint256,uint256,uint256)",
@@ -784,7 +784,7 @@ export class OtterBondStakeDepository extends ethereum.SmartContract {
     }
     let value = result.value;
     return ethereum.CallResult.fromValue(
-      new OtterBondStakeDepository__termsResult(
+      new ValuesBondStakeDepository__termsResult(
         value[0].toBigInt(),
         value[1].toBigInt(),
         value[2].toBigInt(),
@@ -843,11 +843,11 @@ export class ConstructorCall__Inputs {
     this._call = call;
   }
 
-  get _CLAM(): Address {
+  get _VALUES(): Address {
     return this._call.inputValues[0].value.toAddress();
   }
 
-  get _sCLAM(): Address {
+  get _sVALUES(): Address {
     return this._call.inputValues[1].value.toAddress();
   }
 

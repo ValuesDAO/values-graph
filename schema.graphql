@@ -156,16 +156,16 @@ type Withdrawal @entity {
 type ProtocolMetric @entity {
   id: ID!
   timestamp: BigInt!
-  clamCirculatingSupply: BigDecimal!
-  sClamCirculatingSupply: BigDecimal!
+  valuesCirculatingSupply: BigDecimal!
+  sValuesCirculatingSupply: BigDecimal!
   totalSupply: BigDecimal!
-  clamPrice: BigDecimal!
+  valuesPrice: BigDecimal!
   marketCap: BigDecimal!
   totalValueLocked: BigDecimal!
   treasuryRiskFreeValue: BigDecimal!
   treasuryMarketValue: BigDecimal!
   nextEpochRebase: BigDecimal!
-  nextDistributedClam: BigDecimal!
+  nextDistributedValues: BigDecimal!
   treasuryMaiRiskFreeValue: BigDecimal!
   treasuryMaiMarketValue: BigDecimal!
   treasuryFraxRiskFreeValue: BigDecimal!
@@ -182,7 +182,7 @@ type ProtocolMetric @entity {
   runway70k: BigDecimal
   runway100k: BigDecimal
   runwayCurrent: BigDecimal
-  treasuryClamMaiPOL: BigDecimal!
-  treasuryClamFraxPOL: BigDecimal!
-  treasuryClamWmaticPOL: BigDecimal!
+  treasuryValuesMaiPOL: BigDecimal!
+  treasuryValuesFraxPOL: BigDecimal!
+  treasuryValuesWmaticPOL: BigDecimal!
 }

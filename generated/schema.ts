@@ -1471,16 +1471,22 @@ export class ProtocolMetric extends Entity {
     this.set("id", Value.fromString(id));
 
     this.set("timestamp", Value.fromBigInt(BigInt.zero()));
-    this.set("clamCirculatingSupply", Value.fromBigDecimal(BigDecimal.zero()));
-    this.set("sClamCirculatingSupply", Value.fromBigDecimal(BigDecimal.zero()));
+    this.set(
+      "valuesCirculatingSupply",
+      Value.fromBigDecimal(BigDecimal.zero())
+    );
+    this.set(
+      "sValuesCirculatingSupply",
+      Value.fromBigDecimal(BigDecimal.zero())
+    );
     this.set("totalSupply", Value.fromBigDecimal(BigDecimal.zero()));
-    this.set("clamPrice", Value.fromBigDecimal(BigDecimal.zero()));
+    this.set("valuesPrice", Value.fromBigDecimal(BigDecimal.zero()));
     this.set("marketCap", Value.fromBigDecimal(BigDecimal.zero()));
     this.set("totalValueLocked", Value.fromBigDecimal(BigDecimal.zero()));
     this.set("treasuryRiskFreeValue", Value.fromBigDecimal(BigDecimal.zero()));
     this.set("treasuryMarketValue", Value.fromBigDecimal(BigDecimal.zero()));
     this.set("nextEpochRebase", Value.fromBigDecimal(BigDecimal.zero()));
-    this.set("nextDistributedClam", Value.fromBigDecimal(BigDecimal.zero()));
+    this.set("nextDistributedValues", Value.fromBigDecimal(BigDecimal.zero()));
     this.set(
       "treasuryMaiRiskFreeValue",
       Value.fromBigDecimal(BigDecimal.zero())
@@ -1503,9 +1509,12 @@ export class ProtocolMetric extends Entity {
       Value.fromBigDecimal(BigDecimal.zero())
     );
     this.set("currentAPY", Value.fromBigDecimal(BigDecimal.zero()));
-    this.set("treasuryClamMaiPOL", Value.fromBigDecimal(BigDecimal.zero()));
-    this.set("treasuryClamFraxPOL", Value.fromBigDecimal(BigDecimal.zero()));
-    this.set("treasuryClamWmaticPOL", Value.fromBigDecimal(BigDecimal.zero()));
+    this.set("treasuryValuesMaiPOL", Value.fromBigDecimal(BigDecimal.zero()));
+    this.set("treasuryValuesFraxPOL", Value.fromBigDecimal(BigDecimal.zero()));
+    this.set(
+      "treasuryValuesWmaticPOL",
+      Value.fromBigDecimal(BigDecimal.zero())
+    );
   }
 
   save(): void {
@@ -1543,22 +1552,22 @@ export class ProtocolMetric extends Entity {
     this.set("timestamp", Value.fromBigInt(value));
   }
 
-  get clamCirculatingSupply(): BigDecimal {
-    let value = this.get("clamCirculatingSupply");
+  get valuesCirculatingSupply(): BigDecimal {
+    let value = this.get("valuesCirculatingSupply");
     return value!.toBigDecimal();
   }
 
-  set clamCirculatingSupply(value: BigDecimal) {
-    this.set("clamCirculatingSupply", Value.fromBigDecimal(value));
+  set valuesCirculatingSupply(value: BigDecimal) {
+    this.set("valuesCirculatingSupply", Value.fromBigDecimal(value));
   }
 
-  get sClamCirculatingSupply(): BigDecimal {
-    let value = this.get("sClamCirculatingSupply");
+  get sValuesCirculatingSupply(): BigDecimal {
+    let value = this.get("sValuesCirculatingSupply");
     return value!.toBigDecimal();
   }
 
-  set sClamCirculatingSupply(value: BigDecimal) {
-    this.set("sClamCirculatingSupply", Value.fromBigDecimal(value));
+  set sValuesCirculatingSupply(value: BigDecimal) {
+    this.set("sValuesCirculatingSupply", Value.fromBigDecimal(value));
   }
 
   get totalSupply(): BigDecimal {
@@ -1570,13 +1579,13 @@ export class ProtocolMetric extends Entity {
     this.set("totalSupply", Value.fromBigDecimal(value));
   }
 
-  get clamPrice(): BigDecimal {
-    let value = this.get("clamPrice");
+  get valuesPrice(): BigDecimal {
+    let value = this.get("valuesPrice");
     return value!.toBigDecimal();
   }
 
-  set clamPrice(value: BigDecimal) {
-    this.set("clamPrice", Value.fromBigDecimal(value));
+  set valuesPrice(value: BigDecimal) {
+    this.set("valuesPrice", Value.fromBigDecimal(value));
   }
 
   get marketCap(): BigDecimal {
@@ -1624,13 +1633,13 @@ export class ProtocolMetric extends Entity {
     this.set("nextEpochRebase", Value.fromBigDecimal(value));
   }
 
-  get nextDistributedClam(): BigDecimal {
-    let value = this.get("nextDistributedClam");
+  get nextDistributedValues(): BigDecimal {
+    let value = this.get("nextDistributedValues");
     return value!.toBigDecimal();
   }
 
-  set nextDistributedClam(value: BigDecimal) {
-    this.set("nextDistributedClam", Value.fromBigDecimal(value));
+  set nextDistributedValues(value: BigDecimal) {
+    this.set("nextDistributedValues", Value.fromBigDecimal(value));
   }
 
   get treasuryMaiRiskFreeValue(): BigDecimal {
@@ -1849,30 +1858,30 @@ export class ProtocolMetric extends Entity {
     }
   }
 
-  get treasuryClamMaiPOL(): BigDecimal {
-    let value = this.get("treasuryClamMaiPOL");
+  get treasuryValuesMaiPOL(): BigDecimal {
+    let value = this.get("treasuryValuesMaiPOL");
     return value!.toBigDecimal();
   }
 
-  set treasuryClamMaiPOL(value: BigDecimal) {
-    this.set("treasuryClamMaiPOL", Value.fromBigDecimal(value));
+  set treasuryValuesMaiPOL(value: BigDecimal) {
+    this.set("treasuryValuesMaiPOL", Value.fromBigDecimal(value));
   }
 
-  get treasuryClamFraxPOL(): BigDecimal {
-    let value = this.get("treasuryClamFraxPOL");
+  get treasuryValuesFraxPOL(): BigDecimal {
+    let value = this.get("treasuryValuesFraxPOL");
     return value!.toBigDecimal();
   }
 
-  set treasuryClamFraxPOL(value: BigDecimal) {
-    this.set("treasuryClamFraxPOL", Value.fromBigDecimal(value));
+  set treasuryValuesFraxPOL(value: BigDecimal) {
+    this.set("treasuryValuesFraxPOL", Value.fromBigDecimal(value));
   }
 
-  get treasuryClamWmaticPOL(): BigDecimal {
-    let value = this.get("treasuryClamWmaticPOL");
+  get treasuryValuesWmaticPOL(): BigDecimal {
+    let value = this.get("treasuryValuesWmaticPOL");
     return value!.toBigDecimal();
   }
 
-  set treasuryClamWmaticPOL(value: BigDecimal) {
-    this.set("treasuryClamWmaticPOL", Value.fromBigDecimal(value));
+  set treasuryValuesWmaticPOL(value: BigDecimal) {
+    this.set("treasuryValuesWmaticPOL", Value.fromBigDecimal(value));
   }
 }
