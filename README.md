@@ -1,4 +1,4 @@
-# otter-subgraph
+# values-subgraph
 
 ## Development
 
